@@ -45,7 +45,7 @@ var generatePassword = function(){
               results = "Please try again!";
               return results;
           } else if (isNaN(passLen)){
-              alert("Password has to be between 8 and 128 characters long.");
+              alert("Password must be between 8 and 128 characters long.");
               results = "Please try again!";
               return results;
           } else {
@@ -62,14 +62,14 @@ var generatePassword = function(){
                 createPassword();
                     
                 if(chosenReq.includes(abcLower)){
-                  if(!(/[a-z]/).test(results)) createPassword(); 
+                   if (!(/[a-z]+/).test(results)) createPassword(); 
                 } else if (chosenReq.includes(abcUpper)){
-                  if(!(/[A-Z]/).test(results)) createPassword();  
+                  if(!(/[A-Z]+/).test(results)) createPassword();  
                 } else if (chosenReq.includes(abcUpper)){
-                  if(!(/[0-9]/).test(results)) createPassword(); 
+                  if(!(/[0-9]+/).test(results)) createPassword(); 
                 } else if (chosenReq.includes(abcLower)) {
                   if(!(/[!|#|$|%|&|*|@|^|~|?]/).test(results)) createPassword();  
-                }
+                 }
           }
       }
   }
