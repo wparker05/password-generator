@@ -44,7 +44,7 @@ var generatePassword = function(){
       if(num) chosenReq.push(nums);
     var specialChar =confirm("Would you like your password to contain special characters?");
       if(specialChar) chosenReq.push(special);  
-l
+
       //Make sure user select at least 1 requirement
       if (chosenReq.length < 1){
               alert("You must choose at least 1 requirement for your password.");
@@ -72,8 +72,7 @@ l
                   if(!(/[0-9]+/).test(results)) createPassword(); 
                 } else if (chosenReq.includes(abcLower)) {
                   if(!(/[!|#|$|%|&|*|@|^|~|?]/).test(results)) createPassword();  
-                 }
-          
+                 } 
       
   }
 
