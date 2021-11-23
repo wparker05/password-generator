@@ -23,7 +23,7 @@ This website will generate a random password. It allows you to decide the requir
 
 
 ## Link
-[Link to password generator] (https://wparker05.github.io/password-generator/)
+[Password-Generator](https://wparker05.github.io/password-generator/)
 
 ## Visual
 ![Image of password generator website](./assets/images/password.png)
