@@ -4,7 +4,7 @@
 
 - [Description](#Description)
 - [Usage](#Usage)
-- [Link](#Link
+- [Link](#Link)
 - [Visuals](#Visual)
 
 
