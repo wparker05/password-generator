@@ -18,28 +18,19 @@ var generatePassword = function(){
   //Customer picking requirements
   var req = function()
   {
-
     var passLenStr= prompt("How long would you like your password to be?");
     passLen= parseInt(passLenStr);
 
-    if (passLen < 8) {
-      alert("Password has be more than 8 characters long.");
-      results = "Please try again!";
-      return results;
-    } else if (passLen > 128) {
-      alert("Password has to be less than 128 characters."); 
-      results = "Please try again!";
-      return results;
-    } else if (isNaN(passLen)){
-      alert("Password must be between 8 and 128 characters long.");
-      results = "Please try again!";
-      return results;
+    if ((passLen < 8) || (passLen > 128) || isNaN(passLen) ){
+        alert("Password must be between 8 and 128 characters long.");
+        results = "Please try again!";
+        return results;
     }
 
     var lower =confirm("Would you like your password to contain lower case letters?");
       if (lower) chosenReq.push(abcLower); 
     var upper =confirm("Would you like your password to contain upper case letters?");
-      if(upper) chosenReq.push(abcUpper);
+     if(upper) chosenReq.push(abcUpper);
     var num = confirm("Would you like your password to contain numbers?");
       if(num) chosenReq.push(nums);
     var specialChar =confirm("Would you like your password to contain special characters?");
@@ -54,25 +45,27 @@ var generatePassword = function(){
 
               function createPassword() {
                       results="";
-                for (var x = 0; x < passLen; x++ )
+                      var jar = passLen - chosenReq.length;
+                     
+                for (var x = 0; x < jar; x++ )
                   {
                     var numOps = Math.floor(Math.random() * chosenReq.length); 
                     var newArr = randomPick.concat(chosenReq[numOps]);
                     var numPicked = Math.floor(Math.random() * newArr.length);
                     results += newArr[numPicked];   
                   }
+                      
+                  for( var x = 0; x < chosenReq.length; x++) 
+                  {
+                      var check = Math.floor(Math.random() * chosenReq[x].length)
+                      results += chosenReq[x][check];
+                    }
+
+
                 }
                 createPassword();
                     
-                if(chosenReq.includes(abcLower)){
-                   if (!(/[a-z]+/).test(results)) createPassword(); 
-                } else if (chosenReq.includes(abcUpper)){
-                  if(!(/[A-Z]+/).test(results)) createPassword();  
-                } else if (chosenReq.includes(abcUpper)){
-                  if(!(/[0-9]+/).test(results)) createPassword(); 
-                } else if (chosenReq.includes(abcLower)) {
-                  if(!(/[!|#|$|%|&|*|@|^|~|?]/).test(results)) createPassword();  
-                 } 
+                
       
   }
 
